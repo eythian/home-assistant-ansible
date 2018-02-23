@@ -26,3 +26,5 @@
     extra_args: "--upgrade"
     executable: pip3
   when: ha_version is undefined
+  notify:
+      - restart home-assistant
