@@ -28,3 +28,12 @@
   when: ha_version is undefined
   notify:
       - restart home-assistant
+
+- name: install Home Assistant configuration
+  template:
+      src: configuration.yaml.j2
+      dest: "{{ ha_conf_dir }}/configuration.yaml"
+      owner: "{{ ha_user }}"
+      mode: 0644
+  notify:
+      - restart home-assistant
