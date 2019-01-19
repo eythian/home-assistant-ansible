@@ -7,6 +7,7 @@
 ---
 - shell: which hass
   register: hass_command
+  changed_when: False
 
 - name: install fedora systemd unit file
   template:
